@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/image1.png "Recovery Image"
 [image2]: ./examples/image2.png "Recovery Image"
-[image3]: ./examples/image2.png "fit loss data"
+[image3]: ./examples/image3.png "fit loss data"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -83,15 +83,15 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 #### 2. Final Model Architecture
 
 The final model architecture consisted of a convolution neural network with the following layers:
-convolution layer @24,5,5 and subsample as 2,2 followed by RELU
-convolution layer @36,5,5 and subsample as 2,2 followed by RELU
-convolution layer @48,5,5 and subsample as 2,2 followed by RELU
-convolution layer @64,3,3 and RELU
-convolution layer @64,3,3 and RELU
-100 node Fully Connected layer followed by Dropout
-50 node Fully Connected layer followed by Dropout
-10 node Fully Connected layer followed by Dropout
-..and output node
+* convolution layer @24,5,5 and subsample as 2,2 followed by RELU
+* convolution layer @36,5,5 and subsample as 2,2 followed by RELU
+* convolution layer @48,5,5 and subsample as 2,2 followed by RELU
+* convolution layer @64,3,3 and RELU
+* convolution layer @64,3,3 and RELU
+* 100 node Fully Connected layer followed by Dropout
+* 50 node Fully Connected layer followed by Dropout
+* 10 node Fully Connected layer followed by Dropout
+* ..and output node
 
 For visualization, model.ipynb has summary of model.
 
@@ -106,8 +106,10 @@ I then recorded the vehicle recovering from the left side and right sides of the
 ![alt text][image2]
 
 To augment the data sat, I also flipped images and angles thinking that this would help to car to teach steer both ways. 
+
 Other preprocessing included to cropping and resize of image. Cropping helped to hide un-necessary details from images.
 Resize indirectly helped to speed up training.
+
 Similar changes been modified to simulation drive.
 
 However, in final training I used default data available. That was turned to be enough for first track.
@@ -116,8 +118,12 @@ After the collection process, I had 38568 number of data points including prepro
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 5 as with multiple experments to get better loss. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. 
 
-Visualization loss captured with fit history data:
+The ideal number of epochs was 5 as with multiple experments to get better loss. 
+
+I used an adam optimizer so that manually training the learning rate wasn't necessary.
+
+* Visualization loss captured with fit history data:
 
 ![alt test][image3]
