@@ -57,6 +57,7 @@ The model.py and model.ipynb files contains the code for training and saving the
 My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
 
 The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
+\
 Layer (type)                     Output Shape          Param #     Connected to                     
 
 lambda_1 (Lambda)                (None, 64, 64, 3)     0           lambda_input_1[0][0]             
@@ -89,9 +90,7 @@ Total params: 143,419
 Trainable params: 143,419
 Non-trainable params: 0
 ____________________________________________________________________________________________________
-
-1
-#optimizer = Adam(lr=0.001)
+\
 
 #### 2. Attempts to reduce overfitting in the model
 
